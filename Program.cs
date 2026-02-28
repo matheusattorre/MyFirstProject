@@ -18,6 +18,9 @@ namespace myfirstproject
             //calculadora("BANANA",100, 200) ;
             //calculadora("soma",100, 200) ;
             //calculadora("subtracao",100, 200) ;
+            
+            // GitHub - matheusattorre
+
             while (true)
             {
                 Console.WriteLine("Digite o tipo de calculo: (soma (+) / subtração (-) / divisão (/) / multiplicação (*) / potência (^) ou sair ");
