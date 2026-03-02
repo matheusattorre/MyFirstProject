@@ -25,7 +25,6 @@ namespace myfirstproject
 
             while (true)
             {
-
                 //if (tipoCalculo.Equals("soma")) Console.Beep() ;
 
                 //if (tipoCalculo.Equals("subtração")) Console.Beep();
@@ -43,7 +42,7 @@ namespace myfirstproject
 
                     tipoCalculo = Console.ReadLine();
 
-                    if (tipoCalculo.Equals("sair")) Environment.Exit(0); ;
+                    if (tipoCalculo.Equals("sair")) Environment.Exit(0); 
 
 
                     if ((tipoCalculo.Equals("soma")) ||
