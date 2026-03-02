@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.Design;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Timers;
 
 namespace myfirstproject
@@ -24,18 +25,69 @@ namespace myfirstproject
 
             while (true)
             {
-                Console.WriteLine("Digite o tipo de calculo: (soma (+) / subtração (-) / divisão (/) / multiplicação (*) / potência (^) ou sair ");
-                string tipoCalculo = Console.ReadLine();
 
-                if (tipoCalculo.Equals("sair"))
-                    break;
+                //if (tipoCalculo.Equals("soma")) Console.Beep() ;
 
-                Console.WriteLine("Digite o primeiro Valor:");
-                int valor1 = int.Parse(Console.ReadLine());
+                //if (tipoCalculo.Equals("subtração")) Console.Beep();
+
+                //if (tipoCalculo.Equals("divisão")) Console.Beep();
+
+                //if (tipoCalculo.Equals("multiplicação")) Console.Beep();
+
+                //if (tipoCalculo.Equals("pot")) Console.Beep();
+                String tipoCalculo; 
+
+                while (true)
+                {
+                    Console.WriteLine("Digite o tipo de calculo: (soma (+) / subtração (-) / divisão (/) / multiplicação (*) / potência (^) ou sair ");
+
+                    tipoCalculo = Console.ReadLine();
+
+                    if (tipoCalculo.Equals("sair")) Environment.Exit(0); ;
+
+
+                    if ((tipoCalculo.Equals("soma")) ||
+                       (tipoCalculo.Equals("subtração")) ||
+                       (tipoCalculo.Equals("divisão")) ||
+                       (tipoCalculo.Equals("multiplição")) ||
+                       (tipoCalculo.Equals("pot")))
+                    {
+                        Console.Beep();
+                        break;
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid Option");
+                    }
+
+                }
+
+                Console.Beep();
+
+                long valor1;
+
+                while (true)
+                {
+                    Console.WriteLine("Digite o primeiro Valor:");
+                    bool ValorInvalido = long.TryParse(Console.ReadLine(), out valor1);
+
+                    if (ValorInvalido)
+                    {
+                        break;
+                    } else
+                    {
+                        Console.WriteLine("Valor inválido!");
+                        continue;
+                    }
+                }
+
+                //long valor1 = long.Parse(Console.ReadLine());
 
                 Console.WriteLine("Digite o segundo Valor:");
-                int valor2 = int.Parse(Console.ReadLine());
+               long valor2 = long.Parse(Console.ReadLine());
 
+                Console.Beep();
                 calculadora(tipoCalculo, valor1, valor2);
 
                                 
@@ -43,7 +95,7 @@ namespace myfirstproject
 
         }
 
-        private static void calculadora(String tipo, int x, int y ) 
+        private static void calculadora(String tipo, long x, long y ) 
         {
             //Console.WriteLine("Valor 1: " + x);
             //Console.WriteLine("Valor 2: " + y);
@@ -53,7 +105,7 @@ namespace myfirstproject
             {
                 Console.WriteLine($"A {tipo} entre os valores {x} e {y} é igual a {x + y}");
 
-            } else if (tipo.Equals("subtração"))
+            } else if (tipo.Equals("subtração")) 
             {
                 Console.WriteLine($"A {tipo} entre os valores {x} e {y} é igual a {x - y}");
 
@@ -69,6 +121,9 @@ namespace myfirstproject
                 Console.WriteLine($"A {tipo} entre os valores {x} e {y} é igual a {Math.Pow(x, y)}");
             } else 
             {
+
+                
+
                 Console.WriteLine("Eu não sei fazer essa conta");
             }
             
@@ -167,10 +222,16 @@ namespace myfirstproject
 
 
             Console.WriteLine("Boa noite Matheus, aula 2 finalizada com sucesso!");
+
+            
+
+
+
         }
 
 
-
+        
+       
 
 
 
