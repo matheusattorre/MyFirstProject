@@ -11,9 +11,7 @@ namespace myfirstproject
         {
 
             //primeiraFuncao();
-
             //segundaFuncao();
-
             //terceiraFuncao();
 
             //calculadora("BANANA",100, 200) ;
